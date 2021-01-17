@@ -18,7 +18,7 @@ function changethemeL(){
     link.setAttribute("href", currTheme);
     }
 //------------------------------------------------------------
-
+//2131231231  3we4rft
 //Русская рулетка
 
 var  shot = [0, 1, 2, 3, 4, 5];
@@ -28,7 +28,6 @@ var alive = [0, 1, 2, 3, 4, 5];
 function valueinput() {
   return document.getElementById('selectbullet').value;
 }
-
 function arraybulletsVoll() {
     let inputvalue = valueinput();
     let arrbullet = [];    
