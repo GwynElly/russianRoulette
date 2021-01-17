@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectronApp</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="Theme/style.css">
+    <link rel="stylesheet" id="theme-link">
+
+
+</head>
+<body>
+    <div class="themespickup">
+        <input value="D" id="darkthemein" onclick="changethemeD()" type="button" >
+        <input value="L" id="lightthemein" onclick="changethemeL()" type="button">
+
+
+    </div>
+    <h1>Hi xD</h1> <hr>
+    <div>
+        <label for="usr">Lets try bloody baby xD</label> <br>
+        <label for="usr">How many bullets u want? :):)</label> <br>
+       <div class="selectcenter">
+            <select class="selectbullettop" id="selectbullet" onclick="valueinput()">
+            <option> 1</option>
+            <option> 2</option>
+            <option> 3</option>
+            <option> 4</option>
+            <option> 5</option>
+            <option> 6</option>
+          </select> 
+          </div>
+          <hr>
+          <div class="buttonpufcenter">
+        <input value="Puff..." class="buttonpuf" id="inputPuf" onclick="tryPuf()" type="button"> <br>
+        </div>
+        <div class="divtextresult">
+       <br> <label for="usr" class="resulttext" id="alertt" onclick="tryPuf()"></label>
+            </div>
+    </div>
+
+
+    <script src="scriptss.js">
+        require('./render.js');
+
+    </script>
+</body>
+</html>

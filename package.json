@@ -1,0 +1,15 @@
+{
+  "name": "electrapp",
+  "version": "1.0.0",
+  "description": "lol",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^11.2.0"
+  }
+}
