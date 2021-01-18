@@ -18,11 +18,10 @@ function changethemeL(){
     link.setAttribute("href", currTheme);
     }
 //------------------------------------------------------------
-//2131231231  3we4rft
 //Русская рулетка
 
-var  shot = [0, 1, 2, 3, 4, 5];
-var alive = [0, 1, 2, 3, 4, 5];
+//var  shot = [0, 1, 2, 3, 4, 5];
+//var alive = [0, 1, 2, 3, 4, 5];
 
 
 function valueinput() {
@@ -33,28 +32,55 @@ function arraybulletsVoll() {
     let arrbullet = [];    
 
      for (let i = 0; i != inputvalue; i++) {
-         arrbullet[i] =  i + 1;
+         arrbullet[i] =  i + 1; //1  = в отвертсие барабана есть пуля. 
     }
-    console.log(inputvalue);
-    console.log(arrbullet);
+    //console.log(inputvalue);
+    //console.log(arrbullet);
+    //console.log("--------------------")
+    return arrbullet;
 }
-
 
 function tryPuf() {
-var rand1 = Math.floor(Math.random() * shot.length);
-var rand2 = Math.floor(Math.random() * alive.length);
-let textat = document.getElementById('alertt');
+    let randomBulletAlive = Math.floor(Math.random() * 6); //Отверстие в барабане которое будет использовано для выстрела. Если в нем нет пули мы живы.
+    let texresult = document.getElementById('ResultShotCheck');
+    let inputValueBullet = arraybulletsVoll();
+    arrayminusBullet = 6 - inputValueBullet.length;
+            console.log(randomBulletAlive);
+            console.log(inputValueBullet);
+            console.log(arrayminusBullet);
+        if(randomBulletAlive = inputValueBullet) {
+            texresult.innerHTML = 'U DIE';
+        } 
+        else if (randomBulletAlive = inputValueBullet) { //не работает, доделать
+            texresult.innerHTML = 'U ALIVE un';
+        }
+        else {
+            texresult.innerHTML = 'U ALIVE';
+        }
 
-// Учитывается что в барабане револьвера 1 пуля из 6 возможных. 
-let chancedead = 5 / 6 * 100;
-let chancealive =  1 / 6 * 100;
 
-if (rand1 == rand2) {
-//Шанс округляется до ближайшего целого значения (3.1 = 3   3.8 = 4)
-    textat.innerHTML = 'U DIE! <br>U chanse dead: ' + Math.round(chancealive) + '%' 
+
+
+
+    
+
 }
-else {
-    textat.innerHTML = 'U ALIVE! <br>U chanse alive: ' + Math.round(chancedead) +'%'
-   }
+
+// function tryPuf() {
+// var rand1 = Math.floor(Math.random() * shot.length);
+// var rand2 = Math.floor(Math.random() * alive.length);
+// let textat = document.getElementById('alertt');
+
+// // Учитывается что в барабане револьвера 1 пуля из 6 возможных. 
+// let chancedead = 5 / 6 * 100;
+// let chancealive =  1 / 6 * 100;
+
+// if (rand1 == rand2) {
+// //Шанс округляется до ближайшего целого значения (3.1 = 3   3.8 = 4)
+//     textat.innerHTML = 'U DIE! <br>U chanse dead: ' + Math.round(chancealive) + '%' 
+// }
+// else {
+//     textat.innerHTML = 'U ALIVE! <br>U chanse alive: ' + Math.round(chancedead) +'%'
+//    }
    
-   }
+//    }
