@@ -41,28 +41,30 @@ function arraybulletsVoll() {
 }
 
 function tryPuf() {
-    let randomBulletAlive = Math.floor(Math.random() * 6); //Отверстие в барабане которое будет использовано для выстрела. Если в нем нет пули мы живы.
+    let randomBulletAlive = Math.floor(Math.random() * 6); //*5 + 1 чтобы убрать 0 //Отверстие в барабане которое будет использовано для выстрела. Если в нем нет пули мы живы.
     let texresult = document.getElementById('ResultShotCheck');
     let inputValueBullet = arraybulletsVoll();
-    arrayminusBullet = 6 - inputValueBullet.length;
-            console.log(randomBulletAlive);
+        arrayMinusBullet = 6 - inputValueBullet.length;
+    let arrayBulletNothing = [];
+    let gggg = randomBulletAlive
+    // for (let ii = 0; ii = arrayMinusBullet; ii++) {
+    //     arrayBulletNothing.push(000) // заполняемп пустой массив недостающий до 6
+    // }
+            console.log("рандом " + randomBulletAlive);
             console.log(inputValueBullet);
-            console.log(arrayminusBullet);
-        if(randomBulletAlive = inputValueBullet) {
+            console.log("оставшийся пустой массив " + arrayMinusBullet);
+            console.log("---------------");
+            console.log(inputValueBullet[(randomBulletAlive - 1)]);
+
+        if(randomBulletAlive = inputValueBullet[(randomBulletAlive - 1)]) {
             texresult.innerHTML = 'U DIE';
         } 
-        else if (randomBulletAlive = inputValueBullet) { //не работает, доделать
-            texresult.innerHTML = 'U ALIVE un';
-        }
-        else {
-            texresult.innerHTML = 'U ALIVE';
-        }
-
-
-
-
-
-    
+       /* else if (randomBulletAlive = undefined) { //не работает, доделать
+            texresult.innerHTML = 'U ALIVE uwwrn';
+        } */
+         else {
+             texresult.innerHTML = 'U ALIVE';
+         }
 
 }
 
