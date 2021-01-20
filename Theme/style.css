@@ -40,7 +40,11 @@ hr {
     text-align: center;
 }
 .buttonpufcenter {
-    text-align: center;
+    margin: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .buttonpuf {
     width: 100px;
