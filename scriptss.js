@@ -7,82 +7,50 @@ var currTheme = link.getAttribute("href");
 var theme = "";
 
 function changethemeD(){ 
-let dark = document.getElementById('darkthemein');
 currTheme = darkthemejs;
 link.setAttribute("href", currTheme);
 }
 
 function changethemeL(){ 
-    let light = document.getElementById('lightthemein');
     currTheme = lightthemejs;
     link.setAttribute("href", currTheme);
     }
 //------------------------------------------------------------
 //Русская рулетка
 
-//var  shot = [0, 1, 2, 3, 4, 5];
-//var alive = [0, 1, 2, 3, 4, 5];
-
-
 function valueinput() {
-  return document.getElementById('selectbullet').value;
+    let bulletpickup = document.getElementById('selectbullet').value;
+  return bulletpickup;
 }
+
 function arraybulletsVoll() {
     let inputvalue = valueinput();
     let arrbullet = [];    
 
      for (let i = 0; i != inputvalue; i++) {
-         arrbullet[i] =  i + 1; //1  = в отвертсие барабана есть пуля. 
+         arrbullet[i] =  i + 1; //Заполняем массив (барабан) указанным кол-вом пуль 
     }
-    //console.log(inputvalue);
-    //console.log(arrbullet);
-    //console.log("--------------------")
     return arrbullet;
 }
 
 function tryPuf() {
-    let randomBulletAlive = Math.floor(Math.random() * 6); //*5 + 1 чтобы убрать 0 //Отверстие в барабане которое будет использовано для выстрела. Если в нем нет пули мы живы.
+    let randomBulletAlive = Math.floor(Math.random() * 5 + 1); //*5 + 1 чтобы убрать 0 //Отверстие в барабане которое будет использовано для выстрела. Если в нем ничего нет мы живы.
     let texresult = document.getElementById('ResultShotCheck');
     let inputValueBullet = arraybulletsVoll();
-        arrayMinusBullet = 6 - inputValueBullet.length;
-    let arrayBulletNothing = [];
-    let gggg = randomBulletAlive
-    // for (let ii = 0; ii = arrayMinusBullet; ii++) {
-    //     arrayBulletNothing.push(000) // заполняемп пустой массив недостающий до 6
-    // }
-            console.log("рандом " + randomBulletAlive);
-            console.log(inputValueBullet);
-            console.log("оставшийся пустой массив " + arrayMinusBullet);
-            console.log("---------------");
-            console.log(inputValueBullet[(randomBulletAlive - 1)]);
+    var audioBabah = new Audio("E:/Discord_lol/russianRoulette/Audio/audio_file_babah.mp3");
+    var audioChik = new Audio("E:/Discord_lol/russianRoulette/Audio/audio_file_chik.mp3");
+    let chanceAlive = 6 - valueinput(); //Получаем коэффициент - 248 / 24 = 10.333 Получаем проценты - 100% / 10.333 = 9.677 %
+    let chanceDead = 6 - chanceAlive; 
+    let chanceprocA = 100 / (6 / chanceAlive);
+    let chanceprocD = 100 / (6 / chanceDead);
 
         if(randomBulletAlive = inputValueBullet[(randomBulletAlive - 1)]) {
-            texresult.innerHTML = 'U DIE';
+            texresult.innerHTML = 'U DIE xD <br> Шанс умереть был: ' +
+             + Math.round(chanceprocD) + ' %';
+            audioBabah.play();
         } 
-       /* else if (randomBulletAlive = undefined) { //не работает, доделать
-            texresult.innerHTML = 'U ALIVE uwwrn';
-        } */
          else {
-             texresult.innerHTML = 'U ALIVE';
+             texresult.innerHTML = 'U ALIVE! :)) <br> Шанс выжить был: ' + Math.round(chanceprocA) + ' %';
+             audioChik.play();
          }
-
-}
-
-// function tryPuf() {
-// var rand1 = Math.floor(Math.random() * shot.length);
-// var rand2 = Math.floor(Math.random() * alive.length);
-// let textat = document.getElementById('alertt');
-
-// // Учитывается что в барабане револьвера 1 пуля из 6 возможных. 
-// let chancedead = 5 / 6 * 100;
-// let chancealive =  1 / 6 * 100;
-
-// if (rand1 == rand2) {
-// //Шанс округляется до ближайшего целого значения (3.1 = 3   3.8 = 4)
-//     textat.innerHTML = 'U DIE! <br>U chanse dead: ' + Math.round(chancealive) + '%' 
-// }
-// else {
-//     textat.innerHTML = 'U ALIVE! <br>U chanse alive: ' + Math.round(chancedead) +'%'
-//    }
-   
-//    }
+        }
